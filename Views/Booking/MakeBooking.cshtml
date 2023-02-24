@@ -1,0 +1,16 @@
+@model Booking
+@{
+    ViewData["Title"] = "Bon Fromage";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+
+<h3>Välkommen!</h3>
+
+<p>Namn: <b>@Model.Name</b></p>
+<p>Datum: <b>@Model.BookingDate.ToString("yyyy-MM-dd")</b></p>
+<p>Tid: <b>@Model.BookingDate.ToString("HH:mm")</b></p>
+<p>Antal gäster: <b>@Model.PartySize</b></p>

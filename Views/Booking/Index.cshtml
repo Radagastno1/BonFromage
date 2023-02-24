@@ -1,0 +1,52 @@
+@model Booking
+@{
+    ViewData["Title"] = "Bon Fromage";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    rel="stylesheet">
+
+@{
+    ViewBag.Title = "Boka bord";
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#datepicker').datepicker({
+                format: 'dd-mm-yyyy',
+                startDate: new Date()
+            });
+        });
+    </script>
+}
+
+<h2>Boka bord</h2>
+
+@using (Html.BeginForm("makebooking", "booking", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label for="name">För- och efternamn:</label>
+        <input type="text" class="form-control" id="namepicker" name="Name">
+    </div>
+
+    <div class="form-group">
+        <label for="datetime">Välj datum och tid:</label>
+        <div class='input-group date' id='datetimepicker'>
+            <input type='text' class="form-control" name="BookingDate" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="partySize">Antal gäster:</label>
+        <input type="number" class="form-control" id="partySize" name="PartySize" min="1" max="20">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Boka</button>
+}
+

@@ -1,0 +1,18 @@
+@model List<BonFromage.Models.Adventage>
+@{
+    ViewData["Title"] = "Bon Fromage";
+}
+
+<h3 id="about">Lär känna vår passion för fransk matlagning och hållbarhet</h3>
+
+<p>Själva restaurangen grundades för 10 år sedan av en fransk kock som ville dela 
+    med sig av sin passion för den franska matlagningstraditionen och kulturen.</p>
+
+<b>Fördelar</b>
+<ul>
+    @foreach (var advantage in Model)
+    {
+        <li><b>@advantage.Name</b><br>@advantage.Description</li>
+    }
+</ul>
+
