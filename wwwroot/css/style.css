@@ -51,26 +51,21 @@ h3{
 {
     text-align: center;
 }
-.nav-link{
+.nav-link, a{
     color:saddlebrown;
     font-size: x-large;
     margin-right: 20px; 
     text-decoration: none;
+    font-weight: normal; /* ta bort font-weight: bold från tidigare kod */
+    transition: all 0.3s ease; /* animera övergången mellan tillstånden */
 }
-.nav-linn, .links{
+.nav-link, .links{
     display: flex;
     justify-content: center;
 }
-.nav-link.active {
+.nav-link.active, a:hover{
     font-weight: bold;
+    color:rgb(52, 26, 8) !important;
 }
-a[href="/Menu"].active-link,
-a[href="/About"].active-link,
-a[href="/Locate"].active-link,
-a[href="/Booking"].active-link {
-  font-weight: bold;
-}
-.current-page {
-    font-weight: bold;
-  }
+
   
