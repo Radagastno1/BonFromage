@@ -11,18 +11,21 @@
 </head>
 
 <body>
+    @{
+        var activePage = Context.Request.Path;
+    }
     <a href="/#index">
         <h1>BON FROMAGE</h1>
     </a>
 
     <div class="links">
-        <a href="Menu">MENY</a>
-        <a href="About"><b>OM OSS</b></a>
-        <a href="Locate">HITTA HIT</a>
-        <a href="Booking">BOKA BORD</a>
+        <a href="Menu" class="nav-link @(activePage == "/Menu" ? "active" : "")">MENY</a>
+        <a href="About" class="nav-link @(activePage == "/About" ? "active" : "")">OM OSS</a>
+        <a href="Locate" class="nav-link @(activePage == "/Locate" ? "active" : "")">HITTA HIT</a>
+        <a href="Booking" class="nav-link @(activePage == "/Booking" ? "active" : "")">BOKA BORD</a>
     </div>
 
- 
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
