@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BonFromage.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,8 +32,7 @@ namespace BonFromage.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
-                    Time = table.Column<TimeOnly>(type: "TEXT", nullable: false),
+                    BookingDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     PartySize = table.Column<int>(type: "INTEGER", nullable: false),
                     IsConfirmed = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
